@@ -14,11 +14,11 @@ namespace Mine.Services
         {
             items = new List<ItemModel>()
             {
-                new ItemModel { Id = Guid.NewGuid().ToString(), Text = "dkm", Description="This is an item description." , Value = },
-                new ItemModel { Id = Guid.NewGuid().ToString(), Text = "tdlockett", Description="This is an item description." , Value = 16},
-                new ItemModel { Id = Guid.NewGuid().ToString(), Text = "dangerusswilson", Description="This is an item description." , Value = 3},
-                new ItemModel { Id = Guid.NewGuid().ToString(), Text = "qdiggs", Description="This is an item description." , Value = 6},
-                new ItemModel { Id = Guid.NewGuid().ToString(), Text = "bwagz", Description="This is an item description." , Value = 54}
+                new ItemModel { Id = Guid.NewGuid().ToString(), Text = "dkm", Description="NFL Best WR." , Value = },
+                new ItemModel { Id = Guid.NewGuid().ToString(), Text = "tdlockett", Description="NFL Best slot WR." , Value = 16},
+                new ItemModel { Id = Guid.NewGuid().ToString(), Text = "dangerusswilson", Description="NFL Best QB." , Value = 3},
+                new ItemModel { Id = Guid.NewGuid().ToString(), Text = "qdiggs", Description="NFL Best FS." , Value = 6},
+                new ItemModel { Id = Guid.NewGuid().ToString(), Text = "bwagz", Description="NFL Best MLB." , Value = 54}
             };
         }
 
