@@ -10,7 +10,7 @@ namespace Mine.ViewModels
         public ItemDetailViewModel(ItemModel ItemModel = null)
         {
             Title = ItemModel?.Text;
-            ItemModel = ItemModel;
+            this.ItemModel = ItemModel;
         }
     }
 }
