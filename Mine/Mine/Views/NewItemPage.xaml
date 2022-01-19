@@ -33,7 +33,7 @@
                     />
             
                 <Label 
-                    x:Name=ValueValue"
+                    x:Name="ValueValue"
                     Text="{Bind Item.Value}"
                     FontSize="Medium" />
                     
