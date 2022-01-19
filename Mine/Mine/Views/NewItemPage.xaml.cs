@@ -44,7 +44,7 @@ namespace Mine.Views
         /// </summary>
         void Value_OnStepperValueChanged(object sender, ValueChangedEventArgs e)
         {
-            ValueValue.Text = String.Format("{0}", e.NewValue)
+            ValueValue.Text = String.Format("{0}", e.NewValue);
         }
     }
 }

@@ -14,7 +14,7 @@ namespace Mine.Services
         {
             items = new List<ItemModel>()
             {
-                new ItemModel { Id = Guid.NewGuid().ToString(), Text = "dkm", Description="NFL Best WR." , Value = },
+                new ItemModel { Id = Guid.NewGuid().ToString(), Text = "dkm", Description="NFL Best WR." , Value = 14},
                 new ItemModel { Id = Guid.NewGuid().ToString(), Text = "tdlockett", Description="NFL Best slot WR." , Value = 16},
                 new ItemModel { Id = Guid.NewGuid().ToString(), Text = "dangerusswilson", Description="NFL Best QB." , Value = 3},
                 new ItemModel { Id = Guid.NewGuid().ToString(), Text = "qdiggs", Description="NFL Best FS." , Value = 6},
@@ -31,7 +31,7 @@ namespace Mine.Services
 
         public async Task<bool> UpdateItemAsync(ItemModel item)
         {
-            var oldItem = items.Where((Item arg) => arg.Id == item.Id).FirstOrDefault();
+            var oldItem = items.Where((ItemModel arg) => arg.Id == item.Id).FirstOrDefault();
             items.Remove(oldItem);
             items.Add(item);
 
