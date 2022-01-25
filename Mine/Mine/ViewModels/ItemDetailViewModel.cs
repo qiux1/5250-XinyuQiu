@@ -6,11 +6,11 @@ namespace Mine.ViewModels
 {
     public class ItemDetailViewModel : BaseViewModel
     {
-        public ItemModel ItemModel { get; set; }
-        public ItemDetailViewModel(ItemModel ItemModel = null)
+        public ItemModel Item { get; set; }
+        public ItemDetailViewModel(ItemModel Item = null)
         {
-            Title = ItemModel?.Text;
-            this.ItemModel = ItemModel;
+            Title = Item?.Text;
+            this.Item = Item;
         }
     }
 }
