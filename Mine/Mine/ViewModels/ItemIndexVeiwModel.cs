@@ -12,19 +12,19 @@ namespace Mine.ViewModels
 {
     public class ItemIndexVeiwModel : BaseViewModel
     {
-        public ObservableCollection<ItemModel> Items { get; set; }
+        public ObservableCollection<ItemModel> DataSet { get; set; }
         public Command LoadItemsCommand { get; set; }
 
         public ItemIndexVeiwModel()
         {
             Title = "Items";
-            Items = new ObservableCollection<ItemModel>();
+            DataSet = new ObservableCollection<ItemModel>();
             LoadItemsCommand = new Command(async () => await ExecuteLoadItemsCommand());
 
             MessagingCenter.Subscribe<ItemCreatePage, ItemModel>(this, "AddItem", async (obj, item) =>
             {
                 var newItem = item as ItemModel;
-                Items.Add(newItem);
+                DataSet.Add(newItem);
                 await DataStore.CreateAsync(newItem);
             });
         }
@@ -38,11 +38,11 @@ namespace Mine.ViewModels
 
             try
             {
-                Items.Clear();
+                DataSet.Clear();
                 var items = await DataStore.IndexAsync(true);
                 foreach (var item in items)
                 {
-                    Items.Add(item);
+                    DataSet.Add(item);
                 }
             }
             catch (Exception ex)
@@ -53,6 +53,18 @@ namespace Mine.ViewModels
             {
                 IsBusy = false;
             }
+        }
+
+        /// <summary>
+        /// Read an item from the datastore
+        /// </summary>
+        /// <param name="id">ID of the Record</param>
+        /// <returns>The Record from ReadAsync</returns>
+        public async Task<ItemModel> ReadAsync(string id)
+        {
+            var result = await DataStore.ReadAsync(id);
+            return result;
+
         }
     }
 }
