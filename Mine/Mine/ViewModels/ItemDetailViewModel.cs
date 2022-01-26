@@ -7,10 +7,10 @@ namespace Mine.ViewModels
     public class ItemDetailViewModel : BaseViewModel
     {
         public ItemModel Item { get; set; }
-        public ItemDetailViewModel(ItemModel Item = null)
+        public ItemDetailViewModel(ItemModel item = null)
         {
-            Title = Item?.Text;
-            this.Item = Item;
+            Title = item?.Text;
+            Item = item;
         }
     }
 }
