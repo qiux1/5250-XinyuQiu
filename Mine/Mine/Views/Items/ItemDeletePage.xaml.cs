@@ -39,7 +39,7 @@ namespace Mine.Views
         /// <summary>
         /// Cause the cancel to occur
         /// </summary>
-        public async void Cancel_Clicked(object sender, EventArgs e)
+        public async void CancelItem_Clicked(object sender, EventArgs e)
         {
             await Navigation.PopModalAsync();
         }
