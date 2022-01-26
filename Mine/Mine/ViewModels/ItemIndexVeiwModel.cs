@@ -27,10 +27,17 @@ namespace Mine.ViewModels
                 DataSet.Add(newItem);
                 await DataStore.CreateAsync(newItem);
             });
+
             MessagingCenter.Subscribe<ItemDeletePage, ItemModel>(this, "DeleteItem", async (obj, item) =>
             {
                 var data = item as ItemModel;
                 await DeleteAsync(data);
+            });
+
+            MessagingCenter.Subscribe<ItemUpdatePage, ItemModel>(this, "UpdateItem", async (obj, item) =>
+            {
+                var data = item as ItemModel;
+                await UpdateAsyc(data);
             });
         }
 
@@ -86,6 +93,28 @@ namespace Mine.ViewModels
 
             //Call to remove it from the Data Store
             var result = await DataStore.DeleteAsync(data.Id);
+
+            return result;
+        }
+
+        public async Task<bool> UpdateAsyc(ItemModel data)
+        {
+            // Check if the record exists,
+            // if it does not, then False is returned
+            var record = await ReadAsync(data.Id);
+            if (record == null)
+            {
+                return false;
+            }
+
+            // Call to update it from the Data Store
+            var result = await DataStore.UpdateAsync(data);
+
+            // Need the list box on ItemIndex to refresh
+            // The way to do it is to force the ItemIndexViewModel
+            // to refresh the dataset
+            var canExecute = LoadItemsCommand.CanExecute(null);
+            LoadItemsCommand.Execute(null);
 
             return result;
         }
