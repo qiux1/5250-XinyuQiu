@@ -54,8 +54,11 @@
     <Reference Include="System.Numerics.Vectors" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Xamarin.Forms" Version="5.0.0.2291" />
-    <PackageReference Include="Xamarin.Essentials" Version="1.7.0" />
+    <PackageReference Include="sqlite-net-pcl">
+      <Version>1.8.116</Version>
+    </PackageReference>
+    <PackageReference Include="Xamarin.Forms" Version="5.0.0.2337" />
+    <PackageReference Include="Xamarin.Essentials" Version="1.7.1" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MainActivity.cs" />
@@ -89,20 +92,20 @@
       <Name>Mine</Name>
     </ProjectReference>
   </ItemGroup>
-	<ItemGroup>
-		<AndroidResource Include="Resources\drawable\icon_add.png" />
-	</ItemGroup>
-	<ItemGroup>
-		<AndroidResource Include="Resources\drawable\icon_cancel.png" />
-	</ItemGroup>
-	<ItemGroup>
-		<AndroidResource Include="Resources\drawable\icon_delete.png" />
-	</ItemGroup>
-	<ItemGroup>
-		<AndroidResource Include="Resources\drawable\icon_save.png" />
-	</ItemGroup>
-	<ItemGroup>
-		<AndroidResource Include="Resources\drawable\icon_update.png" />
-	</ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\icon_add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\icon_cancel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\icon_delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\icon_save.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\icon_update.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
 </Project>
