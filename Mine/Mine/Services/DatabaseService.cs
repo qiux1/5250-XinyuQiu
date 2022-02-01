@@ -10,6 +10,9 @@ namespace Mine.Services
 {
     public class DatabaseService
     {
-        
+        static readonly Lazy<SQLiteAsyncConnection> lazyInitializer = new Lazy<SQLiteAsyncConnection>(() =>
+        {
+            return new SQLiteAsyncConnection(Constants.DatabasePath, Constants.Flags);
+        });
     }
 }
