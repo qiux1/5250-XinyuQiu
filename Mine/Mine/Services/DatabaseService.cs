@@ -42,6 +42,12 @@ namespace Mine.Services
             }
         }
 
+        /// <summary>
+        /// Write to the table
+        /// </summary>
+        /// <param name="item">ItemModel</param>
+        /// <returns>ID</returns>
+        /// <exception cref="NotImplementedException"></exception>
         public Task<bool> CreateAsync(ItemModel item)
         {
             throw new NotImplementedException();
