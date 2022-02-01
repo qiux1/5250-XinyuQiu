@@ -48,9 +48,22 @@ namespace Mine.Services
         /// <param name="item">ItemModel</param>
         /// <returns>ID</returns>
         /// <exception cref="NotImplementedException"></exception>
-        public Task<bool> CreateAsync(ItemModel item)
+        public async Task<bool> CreateAsync(ItemModel item)
         {
-            throw new NotImplementedException();
+            //if the item does not exist return false
+            if (item == null)
+            {
+                return false;
+            }
+
+            //Check this item is existed in the database
+            var result = await Database.InsertAsync(item);
+            if (result == 0)
+            {
+                return false;
+            }
+
+            return true;
         }
 
         public Task<bool> UpdateAsync(ItemModel item)
