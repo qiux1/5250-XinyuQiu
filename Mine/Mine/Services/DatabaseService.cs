@@ -62,9 +62,17 @@ namespace Mine.Services
             throw new NotImplementedException();
         }
 
-        public Task<IEnumerable<ItemModel>> IndexAsync(bool forceRefresh = false)
+        /// <summary>
+        /// Find the index number
+        /// </summary>
+        /// <param name="forceRefresh"></param>
+        /// <returns></returns>
+        public async Task<IEnumerable<ItemModel>> IndexAsync(bool forceRefresh = false)
         {
-            throw new NotImplementedException();
+            //Create a result variable to call to the ToListAsync method on Database with the Table called ItemModel
+            var result = await Database.Table<ItemModel>().ToListAsync();
+            //return the result
+            return result;
         }
     }
 }
