@@ -16,6 +16,7 @@ namespace UnitTests.Models
 
             // Act
             var result = new ItemModel();
+
             // Reset
 
             // Assert 
@@ -36,6 +37,7 @@ namespace UnitTests.Models
             result.Id = "Id";
             result.Text = "Text";
             result.Value = 1;
+
             // Reset
 
             // Assert 
