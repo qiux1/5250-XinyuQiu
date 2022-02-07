@@ -141,6 +141,30 @@ namespace UnitTests.Helpers
             Assert.AreEqual(5, result);
         }
 
+        /// <summary>
+        /// Unit Test for valid three rolls for a 10-side dice 
+        /// force change each dice value to 5 should return 15
+        /// </summary>
+        [Test]
+        public void RollDice_Valid_Roll_3_Dice_10_Fixed_5_Should_Return_15()
+        {
+            // Arrange
+            DiceHelper.ForceRollsToNotRandom = true;
+            DiceHelper.ForcedRandomValue = 5;
+
+            // Act
+            var result1 = DiceHelper.RollDice(1, 10);
+            var result2 = DiceHelper.RollDice(1, 10);
+            var result3 = DiceHelper.RollDice(1, 10);
+            var result = result1 + result2 + result3;
+
+            // Reset
+            DiceHelper.ForceRollsToNotRandom = false;
+
+            // Assert 
+            Assert.AreEqual(15, result);
+        }
+
     }
 }
 
