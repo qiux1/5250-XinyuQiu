@@ -7,7 +7,7 @@ namespace UnitTests.Models
     public class HomeMenuItemTests
     {
         /// <summary>
-        /// Unit Test for ItemModel Constructor
+        /// Unit Test for HomeMenuItemModel Constructor
         /// </summary>
         [Test]
         public void HomeMenuItem_Constructor_Valid_Default_Should_Pass()
@@ -15,7 +15,7 @@ namespace UnitTests.Models
             // Arrange
 
             // Act
-            var result = new ItemModel();
+            var result = new HomeMenuItem();
 
             // Reset
 
@@ -32,36 +32,15 @@ namespace UnitTests.Models
             // Arrange
 
             // Act
-            var result = new ItemModel();
-            result.Description = "Description";
-            result.Id = "Id";
-            result.Text = "Text";
-            result.Value = 1;
+            var result = new HomeMenuItem();
+            result.Id = MenuItemType.About;
+            result.Title = "About";
 
             // Reset
 
             // Assert 
-            Assert.AreEqual("Description", result.Description);
-            Assert.AreEqual("Id", result.Id);
-            Assert.AreEqual("Text", result.Text);
-            Assert.AreEqual(1, result.Value);
-        }
-
-        /// <summary>
-        /// Unit Test for ItemModel Get function
-        /// </summary>
-        [Test]
-        public void HomeMenuItem_Get_Valid_Default_Should_Pass()
-        {
-            // Arrange
-
-            // Act
-            var result = new ItemModel();
-            
-            // Reset
-
-            // Assert 
-            Assert.AreEqual(0, result.Value);
+            Assert.AreEqual("About", result.Title);
+            Assert.AreEqual(MenuItemType.About, result.Id);
         }
 
     }
