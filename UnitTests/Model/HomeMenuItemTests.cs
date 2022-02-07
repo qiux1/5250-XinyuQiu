@@ -4,13 +4,13 @@ using NUnit.Framework;
 namespace UnitTests.Models
 {
     [TestFixture]
-    public class ItemModelTests
+    public class HomeMenuItemTests
     {
         /// <summary>
         /// Unit Test for ItemModel Constructor
         /// </summary>
         [Test]
-        public void ItemModel_Constructor_Valid_Default_Should_Pass()
+        public void HomeMenuItem_Constructor_Valid_Default_Should_Pass()
         {
             // Arrange
 
@@ -26,7 +26,7 @@ namespace UnitTests.Models
         /// Unit Test for ItemModel Set Get function
         /// </summary>
         [Test]
-        public void ItemModel_Set_Get_Valid_Default_Should_Pass()
+        public void HomeMenuItem_Set_Get_Valid_Default_Should_Pass()
         {
             // Arrange
 
@@ -49,7 +49,7 @@ namespace UnitTests.Models
         /// Unit Test for ItemModel Get function
         /// </summary>
         [Test]
-        public void ItemModel_Get_Valid_Default_Should_Pass()
+        public void HomeMenuItem_Get_Valid_Default_Should_Pass()
         {
             // Arrange
 
