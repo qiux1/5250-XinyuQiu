@@ -6,6 +6,9 @@ namespace UnitTests.Models
     [TestFixture]
     public class ItemModelTests
     {
+        /// <summary>
+        /// Unit Test for ItemModel Constructor
+        /// </summary>
         [Test]
         public void ItemModel_Constructor_Valid_Default_Should_Pass()
         {
@@ -25,5 +28,23 @@ namespace UnitTests.Models
             Assert.AreEqual("Text", result.Text);
             Assert.AreEqual(1, result.Value);
         }
+        
+        /// <summary>
+        /// Unit Test for ItemModel Get function
+        /// </summary>
+        [Test]
+        public void ItemModel_Get_Valid_Default_Should_Pass()
+        {
+            // Arrange
+
+            // Act
+            var result = new ItemModel();
+            
+            // Reset
+
+            // Assert 
+            Assert.AreEqual(0, result.Value);
+        }
+
     }
 }
