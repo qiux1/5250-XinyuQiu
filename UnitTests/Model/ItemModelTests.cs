@@ -13,10 +13,17 @@ namespace UnitTests.Models
 
             // Act
             var result = new ItemModel();
+            result.Description = "Description";
+            result.Id = "Id";
+            result.Text = "Text";
+            result.Value = 1;
             // Reset
 
             // Assert 
-            Assert.IsNotNull(result);
+            Assert.AreEqual("Description", result.Description);
+            Assert.AreEqual("Id", result.Id);
+            Assert.AreEqual("Text", result.Text);
+            Assert.AreEqual(1, result.Value);
         }
     }
 }
