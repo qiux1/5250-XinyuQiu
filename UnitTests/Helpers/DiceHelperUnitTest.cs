@@ -25,7 +25,7 @@ namespace UnitTests.Helpers
         }
 
         /// <summary>
-        /// Unit Test for Invalid roll
+        /// Unit Test for Roll between 1 and 6
         /// </summary>
         [Test]
         public void RollDice_Valid_Roll_1_Dice_6_Should_Return_Between_1_And_6()
