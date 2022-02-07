@@ -63,7 +63,9 @@ namespace UnitTests.Helpers
         }
 
         /// <summary>
-        /// Unit Test for an invalid roll should return 0
+        /// Unit Test for an invalid roll 
+        /// a ten-side dice 0 roll 
+        /// should return 0
         /// </summary>
         [Test]
         public void RollDice_InValid_Roll_0_Dice_10_Should_Return_Zero()
@@ -72,6 +74,25 @@ namespace UnitTests.Helpers
 
             // Act
             var result = DiceHelper.RollDice(0, 10);
+
+            // Reset
+
+            // Assert 
+            Assert.AreEqual(0, result);
+        }
+
+        /// <summary>
+        /// Unit Test for an invalid roll 
+        /// when roll once a 0 value dice
+        /// should return 0
+        /// </summary>
+        [Test]
+        public void RollDice_InValid_Roll_1_Dice_0_Should_Return_Zero()
+        {
+            // Arrange
+
+            // Act
+            var result = DiceHelper.RollDice(1, 0);
 
             // Reset
 
