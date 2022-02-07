@@ -43,6 +43,26 @@ namespace UnitTests.Helpers
         }
 
         /// <summary>
+        /// Unit Test for 2 Dice have Roll between 2 and 12
+        /// </summary>
+        [Test]
+        public void RollDice_Valid_Roll_2_Dice_6_Should_Return_Between_2_and_12()
+        {
+            // Arrange
+
+            // Act
+            var result1 = DiceHelper.RollDice(1, 6);
+            var result2 = DiceHelper.RollDice(1, 6);
+            var result = result1 + result2;
+
+            // Reset
+
+            // Assert 
+            Assert.AreEqual(true, result >= 2);
+            Assert.AreEqual(true, result <= 12);
+        }
+
+        /// <summary>
         /// Unit Test for invalid roll force change value to 1
         /// </summary>
         [Test]
