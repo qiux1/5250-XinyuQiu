@@ -63,6 +63,23 @@ namespace UnitTests.Helpers
         }
 
         /// <summary>
+        /// Unit Test for an invalid roll should return 0
+        /// </summary>
+        [Test]
+        public void RollDice_InValid_Roll_0_Dice_10_Should_Return_Zero()
+        {
+            // Arrange
+
+            // Act
+            var result = DiceHelper.RollDice(0, 10);
+
+            // Reset
+
+            // Assert 
+            Assert.AreEqual(0, result);
+        }
+
+        /// <summary>
         /// Unit Test for invalid roll force change value to 1
         /// </summary>
         [Test]
